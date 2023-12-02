@@ -1,0 +1,239 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="tourisme.js"></script>
+    </head>
+    
+    
+    <body>
+          
+        
+    
+    <nav class="navbar navbar-inverse">
+        
+            <div class="container-fluid">
+                
+                    <div class="navbar-header">
+
+                        
+                        
+                        <button class="navbar-toggle" data-toggle="collapse" data-target="#linebar">
+                            
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+                        <button  type="button" class="btn btn-info btn-sm glyphicon glyphicon-adjust" data-toggle="button"
+                        onClick="changeMode()"></button> 
+                        <a class="navbar-brand" href="#">L'Inde Tourisme</a>
+                    </div>
+
+                
+                    
+                
+                <div id="linebar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">
+                            <span class="glyphicon glyphicon-user"></span>
+                                Signup
+                            </a>
+                        </li>
+                        <li><a href="#">
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <!--Coupon code-->
+            <div id="coupon">
+                
+                <button onClick="closeCoupon()"><img src="close_button.svg"/></button>
+                
+                <img src="coupon_image.png" alt="Coupon code" style="height: 400px;width:100%;"/>
+                
+            </div>
+
+            <!--Coupon code ends-->
+            <div id="carousel_create" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel_create" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel_create" data-slide-to="1" ></li>
+                        <li data-target="#carousel_create" data-slide-to="2" ></li>
+                        <li data-target="#carousel_create" data-slide-to="3" ></li>
+                    </ol>
+                
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="globe.jpg" alt="Globe" class="ImgSlider" class="img-responsive"/>
+                    </div>
+                    <div class="item">
+                        <img src="beach.jpg" alt="Beach" class="ImgSlider"/>
+                    </div>
+                    <div class="item">
+                        <img src="beach2.jpg" alt="Beach" class="ImgSlider"/>
+                    </div>
+                    <div class="item">
+                        <img src="church.jpg" alt="Beach" class="ImgSlider"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="left carousel-control" href="#carousel_create" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel_create" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <div class="container">
+    <hr/>   
+    <div class="fa fa-book fa-fw panel panel-heading" > Trip Booking</div>
+       
+               <div class="panel-body">
+                   <form>
+                                        <!--Validating forms-->                    
+                       <div class="row">
+                           <div class="form-group col-xs-3" id="fdiv">
+                               <label>First Name: </label> <input type="text" class="form-control" placeholder="First Name" 
+                               id="fname" onblur="validateFname()"/>
+                               <p id="fout"></p>
+                               
+                           </div>
+                           
+                           <div class="form-group col-xs-3" id="ldiv">
+                               <label>Last Name: </label> <input type="text" class="form-control" placeholder="Last Name"
+                               id="lname" onblur="validateLname()"/>
+                               <p id="lout"></p>
+                           </div>
+                           
+                           <div class="form-group col-xs-5">
+                               <label>Email id</label> <input type="email" class="form-control"
+                               placeholder="A@a.com" id="email" oninput="validateEmail()"/>
+                               <p id="email_out"></p>
+                           </div>
+                           
+                           
+                           <div class="form-group col-xs-6">
+                               <label for="Textarea">Booking</label>
+                               <textarea class="form-control" id="Textarea"
+                               rows="3" placeholder="Enter your booking details" required></textarea>
+                               
+                           </div>
+                           
+                                               
+                           <div class="form-group col-xs-6" >
+                               <label for="Cartype">Car Model</label> 
+                                   <select class="form-control"id="Cartype">
+                               placeholder="Select your preferred car model" required> 
+                                       <option>Innova</option>
+                                       <option>Indigo</option>
+                                       <option>Tempo Traveller</option>
+                                   </select>                         
+                           </div>
+                       </form>
+                       </div>
+                   
+                   </div>
+                    
+                   <div class="submit-btn">
+                       <button class="btn btn-success" type="submit"><a href="#"></a>
+                           Submit
+                       </button>
+                    </div>
+                   </div>
+
+    <footer>
+        <p class="footText">&copy;Perak Limited</p>
+            <hr/>
+            
+         
+            <script>
+                window.onload = onloadPage();
+            </script>
+
+            <input type="radio" id="Location" value="Location" onclick="geolocation()"/>
+                        <label for="Location"> Current Location</label>
+                        
+                        <p id="out"></p>
+                        <p id="weather"></p>
+                    <script>
+                        let x = document.getElementById('out');
+            let y = document.getElementById('weather');
+
+            function geolocation(){
+            if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition)
+            }else{
+            x.innerText = "Geo Not Supported";
+            }
+            }
+
+            function showPosition(data){
+            console.log(data)
+            let a = data.coords.latitude;
+            let b = data.coords.longitude;
+            x.innerText=`Latitude: ${a} and Longitude: ${b}`
+            const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${a}&lon=${b}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+            //api calling
+            fetch(url,{method:'GET'})
+            //return promise
+            .then((res) =>  res.json())
+            //resolve the promise
+            .then((data) => {
+            console.log(data)
+            let cityName = data.city.name;
+            let temp = data.list[0].temp.day+" °C"
+            y.innerText=`${cityName} ${temp}`
+            /*y.innerText=`Weather of ${cityName} is ${temp}`*/
+            })
+            }
+
+                    </script>
+
+            
+
+    </footer>
+       
+       <!-- <button type="button" class="btn">Classic</button>
+            <button type="button" class="btn btn-info">Classic</button> -->
+
+           <!-- <div class="row">
+                <div id="first" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img src="Arikamedu.jpg" class="img-responsive"/>
+                </div>
+                <div id="second" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img src="Paradise-Beach.jpg" class="img-responsive"/>
+                </div>
+                <div id="third" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img src="Arikamedu.jpg" class="img-responsive"/>
+                </div>
+                <div id="fourth" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img src="Arikamedu.jpg" class="img-responsive"/>
+                </div>
+                <div id="fifth" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img src="Arikamedu.jpg" class="img-responsive"/>
+                </div>
+                <div id="sixth" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <img src="Arikamedu.jpg" class="img-responsive"/>
+                </div>
+            </div>-->
+
+    </body>
+</html>
